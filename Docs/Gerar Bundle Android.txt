@@ -8,6 +8,8 @@ https://medium.com/swlh/generating-an-android-app-bundle-from-your-ionic-app-wit
 
 Gerar para prd
 ionic cordova build android --prod --release -- -- --packageType=bundle
+Caso erro :'bash' is not recognized as an internal or external command por C:\Program Files\Git\bin na variavel path do pc
+
 cd .\platforms\android\
 ./gradlew bundleRelease
 
