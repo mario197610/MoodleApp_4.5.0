@@ -1,0 +1,7 @@
+
+professor:profteste
+aluno:studenttest
+
+
+
+curso:Admin Sandbox Course

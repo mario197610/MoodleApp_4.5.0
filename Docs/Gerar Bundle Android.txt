@@ -1,0 +1,59 @@
+Passos para gerar bundle
+
+1.Instalar o enviroment
+https://docs.moodle.org/dev/Setting_up_your_development_environment_for_the_Moodle_App
+
+2.Seguir estes passos para gerar o bundle aab
+https://medium.com/swlh/generating-an-android-app-bundle-from-your-ionic-app-without-android-studio-5bc3acaf4528
+
+Gerar para prd
+ionic cordova build android --prod --release -- -- --packageType=bundle
+cd .\platforms\android\
+./gradlew bundleRelease
+
+Assinar aab .
+
+--keystore original (usar este)
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore cambkey.keystore C:\WORK\CAMB\MoodleAPP\Code_Mobile_400_SDK32\MoodleApp_4.0.0\platforms\android\app\build\outputs\bundle\release\app-release.aab cambridge
+pass:cambridge
+
+--keystore  novo
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore clientkeystore.jks C:\WORK\CAMB\MoodleAPP\Code_Mobile_400_SDK32\MoodleApp_4.0.0\platforms\android\app\build\outputs\bundle\release\app-release.aab client
+
+
+Nota:Correr o jarsigner na pasta keystore
+
+3.Erros
+
+
+a)Caso surja o Erro falta de dx.bat
+First of all, I faced this issue in Android Studio 4.2.2 and you do not need to downgrade the SDK build tool from 31 to 30 or change compile SDK version.
+
+The main problem is the two files missing in SDK build tool 31 that are:
+
+    dx.bat
+    dx.jar
+
+The solution is that these files are named d8 in the file location so changing their name to dx will solve the error.
+
+The steps are below.
+For Windows
+
+    go to the location
+
+     "C:\Users\user\AppData\Local\Android\Sdk\build-tools\31.0.0"
+
+    find a file named d8.bat. This is a Windows batch file.
+
+    rename d8.bat to dx.bat.
+
+    in the folder lib ("C:\Users\user\AppData\Local\Android\Sdk\build-tools\31.0.0\lib")
+
+    rename d8.jar to dx.jar
+
+Remember AppData is a hidden folder. Turn on hidden items to see the AppData folder.
+
+b)No version of NDK matched the requested version 21.0.6113669. Versions available locally: 22.1.7171670
+
+
+sdkmanager --install "ndk;21.0.6113669" --sdk_root="C:\Program Files (x86)\Android\android-sdk"

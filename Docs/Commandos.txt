@@ -1,0 +1,48 @@
+
+--instalar ionic
+npm install -g @ionic/cli
+
+--Instalar node.js versão especifica
+nvm install 14.15.0
+nvm use 14.15.0
+
+--Install
+npm install
+
+--Build
+ionic build
+
+--Info
+ionic info
+
+
+--Correr app browser
+npx ng serve "--host=localhost" "--port=8100" "--project=app"
+
+
+--lista devices ligados
+ionic cordova run android --list
+
+--debug p devices ligado via usb
+ionic cordova run android --device
+
+--debug p emulador
+ionic cordova run android --target=Pixel_3_API_30
+ionic cordova run android --target=Pixel_5_API_30
+
+
+--ionic generate resources
+ionic cordova resources android
+ionic cordova resources ios
+
+
+Nota: apagar a pasta Android caso surja o erro 'Error: ENOENT: no such file or directory android\package.json'
+
+
+Erro com permissões REQUEST_INSTALL_PACKAGES na google store
+1.    Remover linhas  em C:\WORK\CAMB\MoodleAPP\Code_Mobile_400\MoodleApp_4.0.0\platforms\android\android.json
+    {
+        "xml": "<uses-permission android:name=\"android.permission.REQUEST_INSTALL_PACKAGES\" />",
+        "count": 1
+    }
+2.Remover em todos os plugin.xml  em C:\WORK\CAMB\MoodleAPP\Code_Mobile_400\MoodleApp_4.0.0\plugins\* linha com permissões REQUEST_INSTALL_PACKAGES

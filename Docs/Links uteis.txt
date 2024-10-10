@@ -1,0 +1,18 @@
+
+Setup envirement dev
+https://docs.moodle.org/dev/Setting_up_your_development_environment_for_the_Moodle_App
+
+push limits
+https://moodle.org/mod/forum/discuss.php?d=397926
+
+
+Language packs
+https://docs.moodle.org/400/en/Moodle_app_guide_for_admins#Custom_language_strings
+https://master.apps.moodledemo.net/assets/lang/en.json
+https://master.apps.moodledemo.net/assets/lang/pt.json
+https://master.apps.moodledemo.net/assets/lang/de.json
+https://master.apps.moodledemo.net/assets/lang/fr.json
+
+
+--Demo apps
+https://integration.apps.moodledemo.net/
