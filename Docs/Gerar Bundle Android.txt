@@ -8,7 +8,16 @@ https://medium.com/swlh/generating-an-android-app-bundle-from-your-ionic-app-wit
 
 Gerar para prd
 ionic cordova build android --prod --release -- -- --packageType=bundle
-Caso erro :'bash' is not recognized as an internal or external command por C:\Program Files\Git\bin na variavel path do pc
+
+    Caso erro :'bash' is not recognized as an internal or external command por C:\Program Files\Git\bin na variavel path do pc
+    Caso erro:An error occurred while running subprocess cordova
+
+        1)Parametrizar a variavel de ambiente JAVA_HOME para jdk 8 ex:C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot
+        2) assinar licensas do sdkmanager: via cmd cd C:\Program Files (x86)\Android\android-sdk\tools\bin\sdkmanager.bat --licenses
+        3)Repor a variavel Java_Home
+        4)actualizar gradle  , https://gradle.org/next-steps/?version=8.10.2&format=bin e respectivas variaveis de ambiente  (path e Gradle_home), limpar gradle cache (C:\Users\mario.almeida.CPAS.000\.gradle\caches)
+
+
 
 cd .\platforms\android\
 ./gradlew bundleRelease
