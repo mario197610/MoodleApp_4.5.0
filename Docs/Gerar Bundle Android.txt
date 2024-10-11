@@ -16,8 +16,12 @@ ionic cordova build android --prod --release -- -- --packageType=bundle
         2) assinar licensas do sdkmanager: via cmd cd C:\Program Files (x86)\Android\android-sdk\tools\bin\sdkmanager.bat --licenses
         3)Repor a variavel Java_Home
         4)actualizar gradle  , https://gradle.org/next-steps/?version=8.10.2&format=bin e respectivas variaveis de ambiente  (path e Gradle_home), limpar gradle cache (C:\Users\mario.almeida.CPAS.000\.gradle\caches)
-
-
+        5)Atualizar o java para jdk 17 instalar , alterar Java_Home C:\Program Files\Java\jdk-11 passar para C:\Program Files\Java\jdk-17,
+        6)npm install --save-dev "cross-env"
+        7)Modify cordova-plugin-moodleapp\package.json
+            "prod": "NODE_ENV=production scripts/build.js",
+                para
+            "prod": "cross-env NODE_ENV=production scripts/build.js",
 
 cd .\platforms\android\
 ./gradlew bundleRelease
@@ -25,7 +29,7 @@ cd .\platforms\android\
 Assinar aab .
 
 --keystore original (usar este)
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore cambkey.keystore C:\WORK\CAMB\MoodleAPP\Code_Mobile_400_SDK32\MoodleApp_4.0.0\platforms\android\app\build\outputs\bundle\release\app-release.aab cambridge
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore cambkey.keystore C:\WORK\CAMB\MoodleAPP\Code_Mobile_450_SDK34\MoodleApp_4.5.0\platforms\android\app\build\outputs\bundle\release\app-release.aab cambridge
 pass:cambridge
 
 --keystore  novo
