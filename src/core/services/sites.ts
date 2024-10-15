@@ -514,10 +514,12 @@ export class CoreSitesProvider {
 
         service = service || CoreConstants.CONFIG.wsservice;
         const lang = await CoreLang.getCurrentLanguage(CoreLangFormat.LMS);
+        // 0oCHANGE0o 20241015 MARIO: Token para acesso aos Ws's do CSO CambridgeMobileHashId
         const params = {
             username,
             password,
             service,
+            CambridgeMobileHashId: 'lusodata_mobile_team',
         };
         const loginUrl = `${siteUrl}/login/token.php?lang=${lang}`;
         let data: CoreSitesLoginTokenResponse;
