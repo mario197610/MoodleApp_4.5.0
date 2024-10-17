@@ -1641,7 +1641,9 @@ export class CoreUtilsProvider {
      * @deprecated since 4.5. Use CoreQRScan.canScanQR instead.
      */
     canScanQR(): boolean {
-        return CoreQRScan.canScanQR();
+        // 0oCHANGE0o 20241017 MARIO: Remover QR Codes
+        // return CoreQRScan.canScanQR();
+        return false;
     }
 
     /**
