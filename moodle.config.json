@@ -9,10 +9,9 @@
     "cache_update_frequency_sometimes": 3600000,
     "cache_update_frequency_rarely": 43200000,
     "default_lang": "en",
+    "_comment2":"// 0oCHANGE0o 20241010 MARIO: So as 4 linguas da Cambridge",
     "languages": {
-        "_comment2":"// 0oCHANGE0o 20241010 MARIO: So as 4 linguas da Cambridge",
         "de": "Deutsch",
-        "de-du": "Deutsch (du)",
         "en": "English",
         "fr": "Français",
         "pt": "Português - Portugal"
