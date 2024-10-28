@@ -1,7 +1,6 @@
 {
-    "_comment1":"// 0oCHANGE0o 20241010 MARIO: App ID",
+    "_comment1":"// 0oCHANGE0o 20241010 MARIO: App ID e APPNAME",
     "app_id": "pt.lusodata.cambridgemoodle",
-    // 0oCHANGE0o 20241017 MARIO: Nome da APP
     "appname": "Cambridge School Mobile",
     "versioncode": 45001,
     "versionname": "4.5.0",
