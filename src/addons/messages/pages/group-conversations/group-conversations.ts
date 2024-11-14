@@ -115,12 +115,22 @@ export class AddonMessagesGroupConversationsPage implements OnInit, OnDestroy {
     protected memberInfoObserver: CoreEventObserver;
     protected firstExpand = false;
 
+    // 0oCHANGE0o 20241114 MARIO : Alunos nao podem pesquisar pessoas
+    isStudent = true;
+
     constructor(
         protected route: ActivatedRoute,
     ) {
         this.loadingMessage = Translate.instant('core.loading');
         this.siteId = CoreSites.getCurrentSiteId();
         this.currentUserId = CoreSites.getCurrentSiteUserId();
+
+        // 0oCHANGE0o 20241114 MARIO : Alunos nao podem pesquisar pessoas
+        const site = CoreSites.getCurrentSite();
+        const username = site ? site.getInfo()?.username : undefined;
+        if (username?.match('c')) {
+            this.isStudent = false;
+        }
 
         // Update conversations when new message is received.
         this.newMessagesObserver = CoreEvents.on(

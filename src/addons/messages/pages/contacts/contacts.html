@@ -6,7 +6,8 @@
         <ion-title>
             <h1>{{ 'addon.messages.contacts' | translate }}</h1>
         </ion-title>
-        <ion-buttons slot="end">
+        <!-- 0oCHANGE0o 20241114 Mario : Alunos nao podem pesquisar pessoas -->
+        <ion-buttons slot="end" *ngIf="!isStudent">
             <ion-button fill="clear" (click)="gotoSearch()" [ariaLabel]="'addon.messages.searchcombined' | translate">
                 <ion-icon name="fas-magnifying-glass" slot="icon-only" aria-hidden="true" />
             </ion-button>

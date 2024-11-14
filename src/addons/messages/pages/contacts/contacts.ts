@@ -55,6 +55,9 @@ export class AddonMessagesContactsPage implements OnInit, OnDestroy {
     requestsLoadMoreError = false;
     requests: AddonMessagesConversationMember[] = [];
 
+    // 0oCHANGE0o 20241114 MARIO : Alunos nao podem pesquisar pessoas
+    isStudent = true;
+
     protected siteId: string;
     protected contactRequestsCountObserver: CoreEventObserver;
     protected memberInfoObserver: CoreEventObserver;
@@ -62,6 +65,13 @@ export class AddonMessagesContactsPage implements OnInit, OnDestroy {
     constructor() {
 
         this.siteId = CoreSites.getCurrentSiteId();
+
+         // 0oCHANGE0o 20241114 MARIO : Alunos nao podem pesquisar pessoas
+         const site = CoreSites.getCurrentSite();
+         const username = site ? site.getInfo()?.username : undefined;
+         if (username?.match('c')) {
+             this.isStudent = false;
+         }
 
         // Update the contact requests badge.
         this.contactRequestsCountObserver = CoreEvents.on(
