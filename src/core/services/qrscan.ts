@@ -37,7 +37,9 @@ export class CoreQRScanService {
      * @returns Whether the app can scan QR codes.
      */
     canScanQR(): boolean {
-        return CorePlatform.isMobile();
+        // 0oCHANGE0o 20250113 MARIO: Remover QR Codes
+        // return CorePlatform.isMobile();
+        return false;
     }
 
     /**
